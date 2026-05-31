@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#991185,#f69de4);
+}
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    width:400px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card h1{
+    color:#941199;
+    margin-bottom:20px;
+}
+
+.card p{
+    font-size:18px;
+    margin:10px 0;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Welcome!</h1>
+
+    <p><strong>Name:</strong> <span id="name"></span></p>
+    <p><strong>Password:</strong> <span id="pass"></span></p>
+
+    <h2 style="margin-top:20px;">Love you from nishita❤️🫂</h2>
+</div>
+
+<script>
+document.getElementById("name").innerHTML =
+localStorage.getItem("username");
+
+document.getElementById("pass").innerHTML =
+localStorage.getItem("password");
+</script>
+
+</body>
+</html>

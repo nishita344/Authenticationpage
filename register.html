@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial,sans-serif;
+            background:linear-gradient(135deg,#11998e,#38ef7d);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:350px;
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .container h2{
+            color:#00341a;
+            text-align:center;
+            margin-bottom:25px;
+        }
+
+        .inputbox{
+            margin-bottom:15px;
+        }
+
+        .inputbox input{
+            width:100%;
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:8px;
+            font-size:16px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            border:none;
+            border-radius:8px;
+            background:#667eea;
+            color:white;
+            font-size:18px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#5563d6;
+        }
+
+        .login-btn{
+            display:block;
+            width:100%;
+            padding:12px;
+            margin-top:10px;
+            border:2px solid #667eea;
+            border-radius:8px;
+            background:white;
+            color:#667eea;
+            font-size:18px;
+            cursor:pointer;
+            text-align:center;
+            text-decoration:none;
+            transition:0.3s;
+        }
+
+        .login-btn:hover{
+            background:#667eea;
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Register Page</h2>
+
+        <div class="inputbox">
+            <input type="text" id="username" placeholder="Enter Username" required>
+        </div>
+
+        <div class="inputbox">
+            <input type="password" id="password" placeholder="Enter Password" required>
+        </div>
+
+        <div class="inputbox">
+            <input type="tel" id="mobileno" placeholder="Enter Mobile Number" required>
+        </div>
+
+        <button type="button" onclick="register()">
+            Register
+        </button>
+
+        <a href="login.html" class="login-btn">
+            Already Registered? Login
+        </a>
+
+    </div>
+
+    <script>
+
+        function register(){
+
+            let name = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+            let mobile = document.getElementById("mobileno").value;
+
+            if(name === "" || pass === "" || mobile === ""){
+                alert("Please fill all fields");
+                return;
+            }
+
+            localStorage.setItem("username", name);
+            localStorage.setItem("password", pass);
+            localStorage.setItem("mobileno", mobile);
+
+            alert("Registration Successful!");
+
+            window.location.href = "login.html";
+        }
+
+    </script>
+
+</body>
+</html>
